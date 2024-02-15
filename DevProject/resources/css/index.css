@@ -1,17 +1,29 @@
-/* * {
+* {
     margin: 0;
     padding: 0;
-} */
+}
+
+@font-face {
+    font-family: Montserrat-Medium;
+    src: url(/DevProject/resources/montserrat/Montserrat-Medium.otf);
+}
 
 @font-face {
     font-family: Montserrat-Light;
     src: url(/DevProject/resources/montserrat/Montserrat-Light.otf);
 }
+
 header {
     margin: auto;
     padding: 15px;
     width: 100%;
     text-align: center;
     min-width: 100px;
+    font-family: Montserrat-Medium;
+}
+
+p {
     font-family: Montserrat-Light;
+    padding: 10px;
+    text-align: center;
 }
