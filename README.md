@@ -1,1 +1,1 @@
-this is just for fun, we'll see where this goes
+The Odin Project related assignments will go here
