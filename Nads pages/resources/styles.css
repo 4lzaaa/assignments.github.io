@@ -26,7 +26,7 @@ body {
     overflow: hidden;
     background-color: #375390;
     font-family: Arial;
-    width: auto%;
+    width: auto;
     display: flex;
     justify-content: center;
     padding: 10px;
