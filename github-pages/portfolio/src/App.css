@@ -1,0 +1,151 @@
+html{
+  scroll-behavior: smooth;;
+}
+
+* {
+  margin: 0 5px ;
+  padding: 0;
+  font-family: Montserrat;
+}
+
+.navbar {
+  margin: auto;
+  padding: 20px;
+  width: 100%;
+  min-width: 100px;
+  display: flex;
+  justify-content: flex-end;
+  text-align: center;
+  overflow: scroll;
+  position: sticky;
+}
+
+.navbar div {
+  padding: 10px;
+}
+
+.navbar a {
+  text-decoration: none;
+  font-size: 20px;
+  color: black;
+}
+
+.navbar a:hover {
+  border: 1px solid black;
+  padding: 8px;
+  border-radius: 6%;
+  background-color: rgba(175, 47, 175, 0.386);
+  color: white;
+}
+
+#section1, #About, #Experience, #Contacts {
+  text-align: center;
+}
+
+.child, .child-2, .child-3, .child-5 {
+  margin-top: 20px;
+  height: 600px;
+  width: 500px;
+  padding: 10px;
+  font-size: 60px;
+  font-weight: 100;
+  text-align: center;
+  vertical-align: middle;
+  display: inline-block;
+  position: sticky;
+  min-width: 600px;
+  overflow: scroll;
+} 
+
+.child-4 {
+  height: 700px;
+  width: 90%;
+  padding: 10px;
+  font-size: 30px;
+  font-weight: 100;
+  text-align: center;
+  vertical-align: middle;
+  display: inline-block;
+  position: sticky;
+  min-width: 600px;
+  overflow: hidden;
+  max-width: 500px;
+}
+
+.child-4 p {
+  font-size: 30px;
+}
+
+.heading {
+  text-align: center;
+  vertical-align: middle;
+  margin-top: 190px;
+  font-weight: 400;
+  font-size: 60px !important;
+}
+
+.bio {
+  min-width: 100px;
+  text-align: center;
+  font-size: 32px !important;
+}
+
+.bold {
+  font-weight: 400;
+}
+
+.italics {
+  font-style: oblique;
+}
+
+.child-2 {
+  background-color: #E6E6E6;
+  opacity: 65%;
+}
+
+.child-2 p {
+  margin-top: 210px;
+  font-size: smaller;
+}
+
+.top, .bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+.one, .two, .three, .four {
+  margin: 10px;
+  width: 210px;
+  height: 200px;
+  vertical-align: baseline;
+  text-align:center;
+}
+
+img {
+  margin-top: 10px;
+}
+
+.pone, .ptwo, .pthree, .pfour {
+  margin-top: 10px;
+  font-size: 0.5em !important;
+}
+
+.socials {
+  display: flex;
+  font-size: 25px;
+  justify-content: center;
+}
+
+.one> img, .two > img, .three > img, .four > img {
+  border-radius: 1rem;
+  border: 1px black solid;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  color: grey;
+}

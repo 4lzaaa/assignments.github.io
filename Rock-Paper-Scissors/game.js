@@ -1,76 +1,61 @@
-console.log("Welcome to Rock, Paper, scissors!");
-console.log("to begin playing, type y/n");
+console.log('Welcome to Rock Paper Scissors!');
 
+const options = ["rock", "paper", "scissors"];
 
 function getComputerChoice() {
-    let compChoice = Math.floor(Math.random() * 3) + 1;
-    console.log("The computer chose: ");
+    const computerChoice = options[Math.floor(Math.random() * options.length)];
+    return computerChoice;
+}
 
-    if (compChoice == 1) {
-        console.log("Rock!")
-    } else if (compChoice == 2 ) {
-        console.log("Paper!") 
+function getPlayerChoice() {
+    let validatedInput = false;
+    while(validatedInput == false) {
+        const choice = prompt("rock, paper, or scissors");
+        if(choice == null){
+            continue
+
+        }
+        const choiceInLower = choice.toLowerCase();
+
+        if(options.includes(choiceInLower)) {
+            validatedInput = true;
+            return choiceInLower;
+        }
+    }
+}
+
+function checkWinner(playerSelection, computerSelection){
+    if (playerSelection === computerSelection) {
+        return "Tie";
+    } else if(
+        playerSelection == "rock" && computerSelection == "scissors" ||
+        playerSelection == "scissors" && computerSelection == "paper" ||
+        playerSelection == "paper" && computerSelection == "rock" ){
+            
+        return "Player"
     } else {
-        console.log("Scissor!")
-    }
-
-}
-
-
-function getUserChoice() {
-    let userChoice = prompt("What will you pick?, Rock, paper or scissors?");
-
-    console.log("you chose: ");  
-
-    let firstLetter = userChoice.charAt(0).toUpperCase()
-    if (firstLetter === "R") {
-        console.log("Rock!")
-    } else if (firstLetter === "P" ) {
-        console.log("Paper!") 
-    } else if (firstLetter === "S"){
-        console.log("Scissor!")
+        return "Computer"
     }
 }
 
-// getUserChoice()
-
-function winner() {
-    let compChoice = getComputerChoice;
-    let userChoice = getUserChoice;
-    if (userChoice === "P" && compChoice === "S" 
-        || userChoice === "R" && compChoice === "P" 
-        || compChoice === "R" && userChoice === "S")  {
-        console.log("Computer wins!, You lose")
-    } else if (compChoice === "P" && userChoice === "S" 
-        || compChoice === "R" && userChoice === "P" 
-        || userChoice === "R" && compChoice === "S") {
-        console.log("You win!")
+function playRound(playerSelection, computerSelection) {
+    const result = checkWinner(playerSelection,computerSelection) 
+    if (result == "Tie") {
+        return "It's a tie!"
+    } else if(result == "Player") {
+        return `You Win! ${playerSelection} beats ${computerSelection}`
     } else {
-        console.log("its a draw!")
+        return `You Win! ${computerSelection} beats ${playerSelection}`
     }
-}
 
+}
 
 function game() {
-    setTimeout(() => {
-        let gameStart = prompt("Do you want to play?");
-        if (gameStart == "y") {
-            getUserChoice();
-            getComputerChoice();
-            winner();
-            console.log("If you want to play again type y/n");
-            setTimeout(() => {
-                again = prompt("Do you want to play again(y/n)");
-                if (again.toLowerCase() === "y") {
-                    game()
-                } else {
-                    console.log("You do not want to play")
-                }
-            }, 4000);
-        } else {
-            console.log("You do not want to play")
-        }
-    }, 3000);
+    for (let i=0; i< 5; i ++){
+        const playerSelection = getPlayerChoice();
+        const computerSelection = getComputerChoice();
+        console.log(playRound(playerSelection, computerSelection));
+    }
 }
 
 game()
